@@ -1,0 +1,80 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: linear-gradient(45deg, rgb(243, 232, 236), rgb(240, 224, 235));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .container {
+    /* width: 550px; */
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #ccc;
+  }
+  h1 {
+    text-align: center;
+  }
+  .row {
+    border-top: 1px solid #766363;
+    padding: 5px 0;
+    margin-top: 10px;
+  }
+  .name {
+    font-weight: bold;
+  }
+  .text input,
+  .check_box,
+  .row select {
+    width: 100%;
+    border: 2px solid #766363;
+    padding: 3px 5px;
+    border-radius: 4px;
+    outline: none;
+    margin-top: 5px;
+  }
+  .text input:focus {
+    border: 2px solid #000;
+  }
+  .check_box input {
+    margin-left: 15px;
+  }
+  .error {
+    font-size: 13px;
+    color: red;
+    line-height: 25px;
+  }
+  .row textarea {
+    max-width: 100%;
+    min-width: 100%;
+    height: 100px;
+    padding: 5px 10px;
+  }
+  
+  .row button {
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 10px auto;
+    display: block;
+    transition: 0.25s;
+    border: 2px solid #000;
+  }
+  .row button:hover {
+    background-color: #766363;
+  }
+  .row button:active {
+    background-color: #fff;
+    color: #000;
+  }
+  

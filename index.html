@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng kí thành viên</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <div class="container">
+        <h1>Đăng kí thành viên</h1>
+        <form name="frm" my-controller="myCtrl">
+            <div class="row text">
+                <div class="name">Mã sinh viên: </div>
+                <input type="text" name="id" minlength="5" maxlength="10" required ng-model="id"
+                    placeholder="Ex: " />
+                <div ng-if="frm.id.$invalid" class="error">
+                    The Student Id cannot be empty
+                </div>
+            </div>
+            <div class="row text">
+                <div class="name">Họ và tên: </div>
+                <input type="text" name="ten" required ng-model="ten" placeholder="Ex: " />
+                <div ng-if="frm.ten.$invalid" class="error">
+                    The name cannot be empty
+                </div>
+            </div>
+            <div class="row text">
+                <div class="name">Email</div>
+                <input type="text" name="email" required ng-model="email" placeholder="Ex: " />
+                <div ng-if="frm.email.$invalid" class="error">
+                    You haven't type Email
+                </div>
+            </div>
+            <div class="row">
+                <div class="name">Giới tính</div>
+                <div class="check_box">
+                    <input type="radio" name="gender" ng-model="gender" value="1" />Male
+                    <input type="radio" name="gender" ng-model="gender" value="2" />Female
+                </div>
+                <p class="error" ng-if="!gender">You haven't selected Gender</p>
+            </div>
+            <div class="row">
+                <div class="name">Sở thích</div>
+                <div class="check_box">
+                    <input type="checkbox" value="0" ng-model="ds" /> Đọc sách
+                    <input type="checkbox" value="1" ng-model="dl" /> Ẩm thực
+                    <input type="checkbox" value="2" ng-model="at" /> Du lịch
+                    <input type="checkbox" value="3" ng-model="an" /> Âm nhạc
+                    <input type="checkbox" value="4" ng-model="kh" /> Khác
+                </div>
+                <div class="error" ng-if="!ds && !dl && !at && !an && !kh">You haven't selected Hobbies</div>
+            </div>
+            <div class="row text">
+                <div class="name">Quốc tịch</div>
+                <select name="nationality" ng-model="nationality">
+                    <option value="Vietnamese">Vietnamese</option>
+                    <option value="British">British</option>
+                    <option value="Korean">Koreapanese</option>
+                    <option value="Canadian">Cann</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Japanese ">Jaadian</option>
+                    <option value="American">American</option>
+                    <option value="Argentinian ">Argentinian</option>
+                </select>
+                <div class="error" ng-if="!nationality">
+                    You haven't selected Nationality
+                </div>
+            </div>
+            <div class="row">
+                <div class="name">Ghi chú</div>
+                <textarea name="notes" ng-model="notes" minlength="10" maxlength="255"></textarea>
+                <div class="error" ng-if="!notes">You haven't type Notes</div>
+            </div>
+            <div class="row">
+                <button type="button">Đăng kí</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", xuly);
+        function xuly($scope) { }
+    </script>
+</body>
+
+</html>
